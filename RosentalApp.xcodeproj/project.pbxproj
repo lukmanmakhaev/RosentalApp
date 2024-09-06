@@ -9,21 +9,47 @@
 /* Begin PBXBuildFile section */
 		078C9F8F2C8776FF00AD1AEF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078C9F8E2C8776FF00AD1AEF /* AppDelegate.swift */; };
 		078C9F912C8776FF00AD1AEF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078C9F902C8776FF00AD1AEF /* SceneDelegate.swift */; };
-		078C9F932C8776FF00AD1AEF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078C9F922C8776FF00AD1AEF /* ViewController.swift */; };
-		078C9F962C8776FF00AD1AEF /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 078C9F952C8776FF00AD1AEF /* Base */; };
+		078C9F932C8776FF00AD1AEF /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078C9F922C8776FF00AD1AEF /* SignInView.swift */; };
 		078C9F982C87770000AD1AEF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 078C9F972C87770000AD1AEF /* Assets.xcassets */; };
 		078C9F9B2C87770000AD1AEF /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 078C9F9A2C87770000AD1AEF /* Base */; };
+		078C9FA32C877C3E00AD1AEF /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078C9FA22C877C3E00AD1AEF /* WelcomeView.swift */; };
+		078C9FA82C888DAD00AD1AEF /* UITextField+ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078C9FA72C888DAD00AD1AEF /* UITextField+ext.swift */; };
+		078C9FAA2C88991600AD1AEF /* UILabel+ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078C9FA92C88991600AD1AEF /* UILabel+ext.swift */; };
+		078C9FAC2C88A31000AD1AEF /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078C9FAB2C88A31000AD1AEF /* CustomTextField.swift */; };
+		078C9FB02C89E48700AD1AEF /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078C9FAF2C89E48700AD1AEF /* AuthViewModel.swift */; };
+		078C9FB42C89ED1F00AD1AEF /* LoginResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078C9FB32C89ED1F00AD1AEF /* LoginResponse.swift */; };
+		078C9FB62C89ED4400AD1AEF /* CustomerNavbarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078C9FB52C89ED4400AD1AEF /* CustomerNavbarItem.swift */; };
+		078C9FB92C8A2B9500AD1AEF /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078C9FB82C8A2B9500AD1AEF /* MainView.swift */; };
+		078C9FBB2C8A2BB000AD1AEF /* TreatmentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078C9FBA2C8A2BB000AD1AEF /* TreatmentView.swift */; };
+		078C9FBD2C8A2BBE00AD1AEF /* ServiceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078C9FBC2C8A2BBE00AD1AEF /* ServiceView.swift */; };
+		078C9FBF2C8A2BC900AD1AEF /* ChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078C9FBE2C8A2BC900AD1AEF /* ChatView.swift */; };
+		078C9FC12C8A2BD300AD1AEF /* ContactView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078C9FC02C8A2BD300AD1AEF /* ContactView.swift */; };
+		078C9FC32C8A33B900AD1AEF /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078C9FC22C8A33B900AD1AEF /* MainTabBarController.swift */; };
+		078C9FC52C8A3C1200AD1AEF /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078C9FC42C8A3C1200AD1AEF /* RootViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		078C9F8B2C8776FF00AD1AEF /* RosentalApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RosentalApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		078C9F8E2C8776FF00AD1AEF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		078C9F902C8776FF00AD1AEF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		078C9F922C8776FF00AD1AEF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		078C9F952C8776FF00AD1AEF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		078C9F922C8776FF00AD1AEF /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
 		078C9F972C87770000AD1AEF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		078C9F9A2C87770000AD1AEF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		078C9F9C2C87770000AD1AEF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		078C9FA22C877C3E00AD1AEF /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
+		078C9FA72C888DAD00AD1AEF /* UITextField+ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+ext.swift"; sourceTree = "<group>"; };
+		078C9FA92C88991600AD1AEF /* UILabel+ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+ext.swift"; sourceTree = "<group>"; };
+		078C9FAB2C88A31000AD1AEF /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
+		078C9FAF2C89E48700AD1AEF /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
+		078C9FB32C89ED1F00AD1AEF /* LoginResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginResponse.swift; sourceTree = "<group>"; };
+		078C9FB52C89ED4400AD1AEF /* CustomerNavbarItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerNavbarItem.swift; sourceTree = "<group>"; };
+		078C9FB82C8A2B9500AD1AEF /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		078C9FBA2C8A2BB000AD1AEF /* TreatmentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreatmentView.swift; sourceTree = "<group>"; };
+		078C9FBC2C8A2BBE00AD1AEF /* ServiceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceView.swift; sourceTree = "<group>"; };
+		078C9FBE2C8A2BC900AD1AEF /* ChatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatView.swift; sourceTree = "<group>"; };
+		078C9FC02C8A2BD300AD1AEF /* ContactView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactView.swift; sourceTree = "<group>"; };
+		078C9FC22C8A33B900AD1AEF /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
+		078C9FC42C8A3C1200AD1AEF /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +82,60 @@
 		078C9F8D2C8776FF00AD1AEF /* RosentalApp */ = {
 			isa = PBXGroup;
 			children = (
-				078C9F8E2C8776FF00AD1AEF /* AppDelegate.swift */,
+				078C9FB72C8A2B7D00AD1AEF /* Views */,
+				078C9FB22C89ED0800AD1AEF /* Models */,
+				078C9FA62C888D9100AD1AEF /* Extentions */,
 				078C9F902C8776FF00AD1AEF /* SceneDelegate.swift */,
-				078C9F922C8776FF00AD1AEF /* ViewController.swift */,
-				078C9F942C8776FF00AD1AEF /* Main.storyboard */,
+				078C9F8E2C8776FF00AD1AEF /* AppDelegate.swift */,
 				078C9F972C87770000AD1AEF /* Assets.xcassets */,
 				078C9F992C87770000AD1AEF /* LaunchScreen.storyboard */,
 				078C9F9C2C87770000AD1AEF /* Info.plist */,
+				078C9FAB2C88A31000AD1AEF /* CustomTextField.swift */,
 			);
 			path = RosentalApp;
+			sourceTree = "<group>";
+		};
+		078C9FA62C888D9100AD1AEF /* Extentions */ = {
+			isa = PBXGroup;
+			children = (
+				078C9FA72C888DAD00AD1AEF /* UITextField+ext.swift */,
+				078C9FA92C88991600AD1AEF /* UILabel+ext.swift */,
+			);
+			path = Extentions;
+			sourceTree = "<group>";
+		};
+		078C9FB12C89E49300AD1AEF /* Authentication */ = {
+			isa = PBXGroup;
+			children = (
+				078C9FAF2C89E48700AD1AEF /* AuthViewModel.swift */,
+				078C9F922C8776FF00AD1AEF /* SignInView.swift */,
+				078C9FA22C877C3E00AD1AEF /* WelcomeView.swift */,
+			);
+			path = Authentication;
+			sourceTree = "<group>";
+		};
+		078C9FB22C89ED0800AD1AEF /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				078C9FB32C89ED1F00AD1AEF /* LoginResponse.swift */,
+				078C9FB52C89ED4400AD1AEF /* CustomerNavbarItem.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		078C9FB72C8A2B7D00AD1AEF /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				078C9FB82C8A2B9500AD1AEF /* MainView.swift */,
+				078C9FBA2C8A2BB000AD1AEF /* TreatmentView.swift */,
+				078C9FBC2C8A2BBE00AD1AEF /* ServiceView.swift */,
+				078C9FBE2C8A2BC900AD1AEF /* ChatView.swift */,
+				078C9FC02C8A2BD300AD1AEF /* ContactView.swift */,
+				078C9FB12C89E49300AD1AEF /* Authentication */,
+				078C9FC22C8A33B900AD1AEF /* MainTabBarController.swift */,
+				078C9FC42C8A3C1200AD1AEF /* RootViewController.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -127,7 +198,6 @@
 			files = (
 				078C9F982C87770000AD1AEF /* Assets.xcassets in Resources */,
 				078C9F9B2C87770000AD1AEF /* Base in Resources */,
-				078C9F962C8776FF00AD1AEF /* Base in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -138,23 +208,29 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				078C9F932C8776FF00AD1AEF /* ViewController.swift in Sources */,
+				078C9FB62C89ED4400AD1AEF /* CustomerNavbarItem.swift in Sources */,
+				078C9FC52C8A3C1200AD1AEF /* RootViewController.swift in Sources */,
+				078C9FB92C8A2B9500AD1AEF /* MainView.swift in Sources */,
+				078C9F932C8776FF00AD1AEF /* SignInView.swift in Sources */,
+				078C9FBB2C8A2BB000AD1AEF /* TreatmentView.swift in Sources */,
 				078C9F8F2C8776FF00AD1AEF /* AppDelegate.swift in Sources */,
+				078C9FB42C89ED1F00AD1AEF /* LoginResponse.swift in Sources */,
 				078C9F912C8776FF00AD1AEF /* SceneDelegate.swift in Sources */,
+				078C9FA32C877C3E00AD1AEF /* WelcomeView.swift in Sources */,
+				078C9FAC2C88A31000AD1AEF /* CustomTextField.swift in Sources */,
+				078C9FBD2C8A2BBE00AD1AEF /* ServiceView.swift in Sources */,
+				078C9FC32C8A33B900AD1AEF /* MainTabBarController.swift in Sources */,
+				078C9FBF2C8A2BC900AD1AEF /* ChatView.swift in Sources */,
+				078C9FA82C888DAD00AD1AEF /* UITextField+ext.swift in Sources */,
+				078C9FAA2C88991600AD1AEF /* UILabel+ext.swift in Sources */,
+				078C9FC12C8A2BD300AD1AEF /* ContactView.swift in Sources */,
+				078C9FB02C89E48700AD1AEF /* AuthViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		078C9F942C8776FF00AD1AEF /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				078C9F952C8776FF00AD1AEF /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		078C9F992C87770000AD1AEF /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -297,7 +373,6 @@
 				INFOPLIST_FILE = RosentalApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -325,7 +400,6 @@
 				INFOPLIST_FILE = RosentalApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
