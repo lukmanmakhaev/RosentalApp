@@ -1,17 +1,18 @@
 //
-//  AuthViewModel.swift
+//  NetworkService.swift
 //  RosentalApp
 //
-//  Created by Lukman Makhaev on 05.09.2024.
+//  Created by Lukman Makhaev on 07.09.2024.
 //
 
 import Foundation
-import Combine
 
-class AuthViewModel {
-    var isAuthenticated = false
+final class NetworkService {
+    static let shared = NetworkService()
     
-    func login(username: String, password: String) async throws {
+    private init() {}
+    
+    func login(username: String, password: String) async throws -> LoginResponse {
         let base64LoginString = "\(username):\(password)"
             .data(using: .utf8)?
             .base64EncodedString() ?? ""
@@ -26,24 +27,32 @@ class AuthViewModel {
         ]
         
         let data = try await sendRequest(parameters: loginParameters, url: url, base64: base64LoginString)
+        KeychainHelper.save(base64LoginString, forKey: "base64LoginString")
         
-        do {
-            let loginResponse = try JSONDecoder().decode(LoginResponse.self, from: data)
-            
-            if loginResponse.login == "ok" {
-                self.isAuthenticated = true
-            }
-            
-            print("Login status: \(loginResponse.login), Code: \(loginResponse.code)")
-            loginResponse.customerNavbar.forEach {
-                print("Menu item: \($0.name) - Action: \($0.action)")
-            }
-        } catch {
-            print("Decoding error: \(error.localizedDescription)")
-            if let response = String(data: data, encoding: .utf8) {
-                print("Raw Response: \(response)")
-            }
+        let loginResponse = try JSONDecoder().decode(LoginResponse.self, from: data)
+        
+        return loginResponse
+    }
+    
+    func getDashboard() async throws -> DashboardResponse {
+        // Retrieve the base64LoginString from Keychain
+        guard let base64LoginString = KeychainHelper.get("base64LoginString") else {
+            throw NSError(domain: "", code: 401, userInfo: [NSLocalizedDescriptionKey: "User not logged in"])
         }
+        
+        let url = URL(string: "https://test.rozentalgroup.ru/version2/entry.php")!
+        
+        let dashboardParameters = [
+            "service[0][name]": "customer_dashboard",
+            "service[1][name]": "my_profile",
+            "service[2][name]": "my_new_notifications",
+            "service[2][attributes][mode]": "private"
+        ]
+        
+        let data = try await sendRequest(parameters: dashboardParameters, url: url, base64: base64LoginString)
+        let dashboardResponse = try JSONDecoder().decode(DashboardResponse.self, from: data)
+        
+        return dashboardResponse
     }
     
     func sendRequest(parameters: [String: String], url: URL, base64: String) async throws -> Data {

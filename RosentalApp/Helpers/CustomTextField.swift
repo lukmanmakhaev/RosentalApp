@@ -139,18 +139,15 @@ final class CustomTextField: UIView {
 
 extension CustomTextField: UITextFieldDelegate {
     func textFieldDidBeginEditing(_ textField: UITextField) {
-        print("Text field did begin editing")
         if !isUp {
             isUp = true
         }
     }
     
     func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
-        print("Should end editing")
         guard let text = textField.text else {
             return false
         }
-        
         if isUp && text.isEmpty {
             isUp = false
         }
