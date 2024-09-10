@@ -6,3 +6,7 @@
 //
 
 import Foundation
+
+struct Notificationss: Codable {
+    let count: Int?
+}

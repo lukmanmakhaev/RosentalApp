@@ -6,11 +6,10 @@
 //
 
 import UIKit
-import Combine
 
 final class SignInView: UIViewController {
 
-    var viewModel: AuthViewModel?
+    var authService = AuthService.shared
     
     var emailField = CustomTextField(placeholderText: "Email", icon: UIImage(systemName: "at"))
     var passwordField = CustomTextField(placeholderText: "Password", icon: UIImage(systemName: "lock"), isPassword: true)
@@ -31,7 +30,6 @@ final class SignInView: UIViewController {
         button.configuration = .filled()
         button.configuration?.cornerStyle = .medium
         button.tintColor = UIColor(named: "orangeTest")
-        button.addTarget(self, action: #selector(loginTapped), for: .touchUpInside)
         return button
     }()
     
@@ -72,6 +70,7 @@ final class SignInView: UIViewController {
         loginButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20).isActive = true
         loginButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20).isActive = true
         loginButton.heightAnchor.constraint(equalToConstant: 50).isActive = true
+        loginButton.addTarget(self, action: #selector(loginTapped), for: .touchUpInside)
     }
     
     private func setupNavigationBar() {
@@ -112,6 +111,7 @@ final class SignInView: UIViewController {
         print("Forgot Password tapped")
     }
     
+    
     @objc private func loginTapped() {
         guard let email = emailField.textField.text, !email.isEmpty else {
             print("Email field is empty")
@@ -121,18 +121,6 @@ final class SignInView: UIViewController {
             print("Password field is empty")
             return
         }
-        
-        Task {
-            do {
-                try await viewModel?.login(username: email, password: password)
-                
-            } catch {
-                print("Login error: \(error)")
-            }
-        }
+        authService.login(email: email, password: password)
     }
-}
-
-#Preview {
-    SignInView()
 }

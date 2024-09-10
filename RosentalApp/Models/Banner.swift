@@ -10,7 +10,7 @@ import Foundation
 struct Banner: Codable {
     let title: String
     let text: String
-    let image: String
+    let image: String?
     let action: String
     let priority: Int
 }

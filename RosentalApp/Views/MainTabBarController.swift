@@ -8,27 +8,24 @@
 import Foundation
 import UIKit
 
-class MainTabBarController: UITabBarController {
+final class MainTabBarController: UITabBarController {
     
-    var navbarItems: [[String: String]] = []
-    
+    var authService = AuthService.shared
+
     override func viewDidLoad() {
         super.viewDidLoad()
         setupTabBar()
+        setupTabBarAppearance()
     }
     
     private func setupTabBar() {
         var viewControllers: [UIViewController] = []
         
-        for item in navbarItems {
-            guard let name = item["name"], let action = item["action"] else { continue }
-            
-            let viewController = createViewController(for: action)
-            viewController.tabBarItem = UITabBarItem(title: name, image: UIImage(systemName: "star"), tag: 0)
-            
+        for item in authService.navbarItems {
+            let viewController = createViewController(for: item.action)
+            viewController.tabBarItem = UITabBarItem(title: item.name, image: UIImage(systemName: item.icon), tag: 0)
             viewControllers.append(viewController)
         }
-        
         self.viewControllers = viewControllers
     }
     
@@ -43,9 +40,22 @@ class MainTabBarController: UITabBarController {
         case "chat":
             return ChatView()
         case "contact":
-            return ContactView()
+            return ContactsView()
         default:
             return UIViewController()
+        }
+    }
+    
+    private func setupTabBarAppearance() {
+        UITabBar.appearance().barTintColor = UIColor.white
+        UITabBar.appearance().tintColor = UIColor.blue
+        UITabBar.appearance().isTranslucent = true
+        if #available(iOS 15.0, *) {
+            let appearance = UITabBarAppearance()
+            appearance.configureWithOpaqueBackground()
+            appearance.backgroundColor = UIColor.white
+            UITabBar.appearance().standardAppearance = appearance
+            UITabBar.appearance().scrollEdgeAppearance = UITabBar.appearance().standardAppearance
         }
     }
 }

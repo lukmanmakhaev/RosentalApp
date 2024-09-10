@@ -6,3 +6,16 @@
 //
 
 import Foundation
+
+struct Indication: Codable {
+    let type: String?
+    let label: String?
+    let lastTransfer: String?
+    let expected: Bool?
+    
+    enum CodingKeys: String, CodingKey {
+        case type, label
+        case lastTransfer = "last_transfer"
+        case expected
+    }
+}

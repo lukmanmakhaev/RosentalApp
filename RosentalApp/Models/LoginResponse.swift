@@ -9,7 +9,7 @@ import Foundation
 
 struct LoginResponse: Codable {
     let login: String
-    let customerNavbar: [CustomerNavbarItem]
+    let customerNavbar: [NavbarItem]
     let code: Int
 
     enum CodingKeys: String, CodingKey {

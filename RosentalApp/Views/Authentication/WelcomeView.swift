@@ -7,12 +7,10 @@
 
 import Foundation
 import UIKit
-import Combine
-
 
 final class WelcomeView: UIViewController {
     
-    var viewModel: AuthViewModel?
+    var authService = AuthService.shared
     
     let logoImageView: UIImageView = {
         let imageView = UIImageView()
@@ -141,11 +139,7 @@ final class WelcomeView: UIViewController {
     
     @objc private func didTapLoginButton() {
         let signInVC = SignInView()
-        signInVC.viewModel = viewModel
         navigationController?.pushViewController(signInVC, animated: true)
+        navigationController?.modalPresentationStyle = .fullScreen
     }
-}
-
-#Preview {
-    WelcomeView()
 }

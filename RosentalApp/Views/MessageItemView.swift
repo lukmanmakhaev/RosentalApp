@@ -22,7 +22,11 @@ class MessageItemView: UIView {
         return view
     }()
     
-    let messageCount: Int = 3
+    var messageCount: Int = 0 {
+        didSet {
+            updateMessageUI()
+        }
+    }
 
     private let messageLabel: UILabel = {
         let label = UILabel()
@@ -65,32 +69,29 @@ class MessageItemView: UIView {
         containerView.leadingAnchor.constraint(equalTo: leadingAnchor).isActive = true
         containerView.trailingAnchor.constraint(equalTo: trailingAnchor).isActive = true
 
-        setupMessageLabel()
         messageLabel.leadingAnchor.constraint(equalTo: containerView.leadingAnchor, constant: 16).isActive = true
         messageLabel.centerYAnchor.constraint(equalTo: containerView.centerYAnchor).isActive = true
         
-        newMessage()
+        redDotView.trailingAnchor.constraint(equalTo: containerView.trailingAnchor, constant: -16).isActive = true
+        redDotView.centerYAnchor.constraint(equalTo: containerView.centerYAnchor).isActive = true
+        redDotView.widthAnchor.constraint(equalToConstant: 10).isActive = true
+        redDotView.heightAnchor.constraint(equalToConstant: 10).isActive = true
     }
     
-    func setupMessageLabel() {
+    private func updateMessageUI() {
         switch messageCount {
         case 0:
-            return messageLabel.text = "Новых cообщений нет"
+            messageLabel.text = "Новых cообщений нет"
+            redDotView.isHidden = true
         case 1:
-            return messageLabel.text = "\(messageCount) сообщение от УК"
+            messageLabel.text = "\(messageCount) сообщение от УК"
+            redDotView.isHidden = false
         case 2...4:
-            return messageLabel.text = "\(messageCount) сообщения от УК"
+            messageLabel.text = "\(messageCount) сообщения от УК"
+            redDotView.isHidden = false
         default:
-            return messageLabel.text = "\(messageCount) сообщений от УК"
-        }
-    }
-    
-    func newMessage() {
-        if messageCount > 0 {
-            redDotView.trailingAnchor.constraint(equalTo: containerView.trailingAnchor, constant: -16).isActive = true
-            redDotView.centerYAnchor.constraint(equalTo: containerView.centerYAnchor).isActive = true
-            redDotView.widthAnchor.constraint(equalToConstant: 10).isActive = true
-            redDotView.heightAnchor.constraint(equalToConstant: 10).isActive = true
+            messageLabel.text = "\(messageCount) сообщений от УК"
+            redDotView.isHidden = false
         }
     }
 }
