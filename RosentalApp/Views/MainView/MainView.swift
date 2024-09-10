@@ -10,8 +10,9 @@ import UIKit
 import Combine
 
 final class MainView: UIViewController {
+    
     var mainViewModel = MainViewModel()
-    private var cancellables = Set<AnyCancellable>()
+    var cancellables = Set<AnyCancellable>()
     
     let profileImageView: UIImageView = {
         let imageView = UIImageView()
@@ -78,7 +79,7 @@ final class MainView: UIViewController {
     
     let messageItemView = MessageItemView()
     
-    private let menuItemsStackView: UIStackView = {
+    let menuItemsStackView: UIStackView = {
         let stackView = UIStackView()
         stackView.axis = .vertical
         stackView.spacing = 10
@@ -86,7 +87,7 @@ final class MainView: UIViewController {
         return stackView
     }()
     
-    lazy var bannerScrollview: UIScrollView = {
+    var bannerScrollview: UIScrollView = {
         let scrollView = UIScrollView()
         scrollView.translatesAutoresizingMaskIntoConstraints = false
         scrollView.showsHorizontalScrollIndicator = false
@@ -94,15 +95,15 @@ final class MainView: UIViewController {
         return scrollView
     }()
     
-    lazy var bannerStackView: UIStackView = {
-        let stackView = UIStackView()
-        stackView.axis = .horizontal
-        stackView.spacing = 10
-        stackView.translatesAutoresizingMaskIntoConstraints = false
-        return stackView
-    }()
+    var bannerStackView: UIStackView = {
+    let stackView = UIStackView()
+    stackView.axis = .horizontal
+    stackView.spacing = 10
+    stackView.translatesAutoresizingMaskIntoConstraints = false
+    return stackView
+}()
     
-    private let serviceStackView: UIStackView = {
+    let serviceStackView: UIStackView = {
         let stackView = UIStackView()
         stackView.axis = .horizontal
         stackView.distribution = .fillEqually
@@ -125,7 +126,14 @@ final class MainView: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .blue
+        self.navigationController?.setNavigationBarHidden(true, animated: false)
         
+        bindData()
+        setupViews()
+        setupConstraints()
+    }
+    
+    private func bindData() {
         mainViewModel.$dashboard
             .receive(on: DispatchQueue.main)
             .sink { [weak self] updatedDashboard in
@@ -133,12 +141,9 @@ final class MainView: UIViewController {
             }
             .store(in: &cancellables)
         mainViewModel.getDashboard()
-        
-        setupViews()
-        setupConstraints()
     }
     
-    func setupViews() {
+    private func setupViews() {
         view.addSubview(profileImageView)
         view.addSubview(nameLabel)
         view.addSubview(addressLabel)
@@ -155,12 +160,11 @@ final class MainView: UIViewController {
         bannerScrollview.addSubview(bannerStackView)
         
         contentView.addSubview(serviceStackView)
-        
         contentView.addSubview(allServicesBtn)
         
     }
     
-    func setupConstraints() {
+    private func setupConstraints() {
         profileImageView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 20).isActive = true
         profileImageView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20).isActive = true
         profileImageView.widthAnchor.constraint(equalToConstant: 38).isActive = true
@@ -218,7 +222,7 @@ final class MainView: UIViewController {
         allServicesBtn.topAnchor.constraint(equalTo: serviceStackView.bottomAnchor, constant: 20).isActive = true
         allServicesBtn.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20).isActive = true
         allServicesBtn.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20).isActive = true
-        allServicesBtn.heightAnchor.constraint(equalToConstant: 50).isActive = true
+        allServicesBtn.heightAnchor.constraint(equalToConstant: 60).isActive = true
         allServicesBtn.addTarget(self, action: #selector(allServicesTapped), for: .touchUpInside)
 
     }
@@ -295,7 +299,7 @@ final class MainView: UIViewController {
             serviceItemView.translatesAutoresizingMaskIntoConstraints = false
             
             serviceItemView.backgroundColor = .systemGray6
-            serviceItemView.heightAnchor.constraint(equalToConstant: 80).isActive = true
+            serviceItemView.heightAnchor.constraint(equalToConstant: 90).isActive = true
             serviceItemView.layer.cornerRadius = 10
             serviceStackView.addArrangedSubview(serviceItemView)
         }

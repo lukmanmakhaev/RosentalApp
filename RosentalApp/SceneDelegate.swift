@@ -59,6 +59,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
                 self?.window?.layer.opacity = 0
             } completion: { [weak self] _ in
                 let nav = UINavigationController(rootViewController: viewController)
+                nav.setNavigationBarHidden(true, animated: false)  // Hide the navigation bar
+
                 nav.modalPresentationStyle = .fullScreen
                 self?.window?.rootViewController = nav
 

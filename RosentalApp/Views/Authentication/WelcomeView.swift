@@ -92,10 +92,16 @@ final class WelcomeView: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
+        navigationController?.setNavigationBarHidden(true, animated: true)
         
         loginButton.addTarget(self, action: #selector(didTapLoginButton), for: .touchUpInside)
         
         setupLayout()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        self.navigationController?.isNavigationBarHidden = false
     }
     
     private func setupLayout() {
@@ -106,7 +112,7 @@ final class WelcomeView: UIViewController {
         view.addSubview(registrationButton)
         view.addSubview(inviteStack)
 
-        logoImageView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 0).isActive = true
+        logoImageView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 20).isActive = true
         logoImageView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20).isActive = true
         logoImageView.widthAnchor.constraint(equalToConstant: 200).isActive = true
         logoImageView.heightAnchor.constraint(equalToConstant: 70).isActive = true
@@ -140,6 +146,5 @@ final class WelcomeView: UIViewController {
     @objc private func didTapLoginButton() {
         let signInVC = SignInView()
         navigationController?.pushViewController(signInVC, animated: true)
-        navigationController?.modalPresentationStyle = .fullScreen
     }
 }

@@ -15,7 +15,7 @@ class ServiceItem: UIView {
     private let iconContainerView: UIView = {
         let view = UIView()
         view.backgroundColor = .blue
-        view.layer.cornerRadius = 15
+        view.layer.cornerRadius = 20
         view.clipsToBounds = true
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
@@ -62,17 +62,16 @@ class ServiceItem: UIView {
         iconImageView.centerXAnchor.constraint(equalTo: iconContainerView.centerXAnchor).isActive = true
         iconImageView.centerYAnchor.constraint(equalTo: iconContainerView.centerYAnchor).isActive = true
 
-        
         addSubview(itemTitle)
 
-        iconContainerView.topAnchor.constraint(equalTo: self.topAnchor, constant: 10).isActive = true
+        iconContainerView.topAnchor.constraint(equalTo: self.topAnchor, constant: 15).isActive = true
         iconContainerView.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
-        iconContainerView.widthAnchor.constraint(equalToConstant: 30).isActive = true
-        iconContainerView.heightAnchor.constraint(equalToConstant: 30).isActive = true
+        iconContainerView.widthAnchor.constraint(equalToConstant: 40).isActive = true
+        iconContainerView.heightAnchor.constraint(equalToConstant: 40).isActive = true
         
-        itemTitle.topAnchor.constraint(equalTo: iconContainerView.bottomAnchor, constant: 8).isActive = true
+        itemTitle.topAnchor.constraint(equalTo: iconContainerView.bottomAnchor, constant: 4).isActive = true
         itemTitle.leadingAnchor.constraint(equalTo: self.leadingAnchor).isActive = true
         itemTitle.trailingAnchor.constraint(equalTo: self.trailingAnchor).isActive = true
-        itemTitle.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -10).isActive = true
+
     }
 }
